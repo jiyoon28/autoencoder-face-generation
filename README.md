@@ -25,12 +25,7 @@ This single-notebook pipeline implements end-to-end face generation and editing 
 
    - Linearly blends between two encoded face vectors over N steps and decodes each to show smooth morphing.
 
-6. **Hair-Color Editing (ARIMAX-style)**
-
-   - Computes a “hair direction” in latent space by averaging blond vs. non-blond encodings.
-   - Shifts a face’s latent vector by α×hair_direction and decodes to alter hair color.
-
-7. **Masked Face Sharpening**
+6. **Masked Face Sharpening**
    - Generates a central-face mask and applies:
      - **UnsharpMask** via PIL for quick sharpening.
      - **Stable Diffusion Img2Img** only inside the mask for stronger detail.
